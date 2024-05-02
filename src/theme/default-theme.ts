@@ -1,7 +1,8 @@
 export const defaultTheme = {
     COLORS: {
         red: '#E45858',
-        purple: '#6246EA',
+        'purple-100': '#F4F4FF',
+        'purple-900': '#6246EA',
         black: '#121214',
         white: '#FFFFFF',
         'gray-700': '#7C7C8A',
@@ -11,10 +12,10 @@ export const defaultTheme = {
         fonts: 'Roboto'
     },
     SIZE: {
-        SM: 14,
-        MD: 16,
-        LG: 20,
-        XL: 32,
-        XXL: 48,
+        SM: 1.4,
+        MD: 1.6,
+        LG: 2.0,
+        XL: 3.2,
+        XXL: 4.8,
     }
 } as const
