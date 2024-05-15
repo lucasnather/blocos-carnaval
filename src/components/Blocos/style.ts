@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import * as Dialog  from '@radix-ui/react-dialog'
+
+export const MainContainer = styled.main`
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 3.2rem;
+`
 
 const BaseButton = styled.button`
     width: 8.6rem;
@@ -44,9 +51,5 @@ export const ButtonMap = styled(BaseButton)`
     color: ${({theme}) => theme.COLORS["purple-900"]};
 `
 
- export const MainContainer = styled.main`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3.2rem;
-`
+
 

@@ -1,4 +1,4 @@
-import Unsplashimage from '../../assets/unsplash_b2jkMC95a_8.svg'
+import { useEffect, useState } from 'react'
 import { Card } from './Card'
 import { 
     BlocosContainer, 
@@ -6,9 +6,39 @@ import {
     ButtonList, 
     ButtonMap, 
     ButtonsHeader,
-    MainContainer } from './style'
+    MainContainer, 
+} from './style'
+import { buscaBlocosApi } from '../../api/busca-blocos-api'
+
+interface FotoProps {
+    image: string
+    url: string
+}
+
+interface BlocosProps {
+    id: string
+    title: string
+    description: string
+    city: string
+    uf: string
+    FotosBloco: FotoProps[]
+}
 
 export function Blocos() {
+
+    const [ bloco, setBloco] = useState<BlocosProps[]>([])
+
+    async function buscaBlocos() {
+        const blocosApi = await buscaBlocosApi()
+
+        setBloco(blocosApi)
+    }
+
+    useEffect(() => {
+        buscaBlocos()
+    }, [])
+   
+  
     return (
         <BlocosContainer>
             <BlocosHeader>
@@ -22,14 +52,24 @@ export function Blocos() {
 
             <MainContainer>
 
-                <Card 
-                    title='O Python do vovô não sobe mais'
-                    description='Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'
-                    city='São Paulo'
-                    uf='SP'
-                    image={Unsplashimage}
-                />
                 
+            {
+                bloco.map(bl => {
+                    console.log(bl)
+                    return (
+                        <Card 
+                            key={bl.id}
+                            title={bl.title}
+                            description={bl.description}
+                            city={bl.city}
+                            uf={bl.uf}
+                            image={bl.FotosBloco[0].url}                 
+                        />    
+                    )
+                })
+            }          
+                        
+
             </MainContainer>
         </BlocosContainer>
     )

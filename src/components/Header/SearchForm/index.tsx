@@ -3,7 +3,7 @@ import Location from '../../../assets/location.svg'
 import Arrow from '../../../assets/chevron-down.svg'
 import { ArrowIcon, Button, FormContainer, Input, InputIcons, InputsContainer, Select } from './style'
 
-export function Form() {
+export function SearchForm() {
     return (
         <FormContainer action="#">
             <InputsContainer>

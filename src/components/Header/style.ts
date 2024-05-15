@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as Dialog  from '@radix-ui/react-dialog'
 
 export const HeaderContainer = styled.header`
     width: 100%;
@@ -6,6 +7,7 @@ export const HeaderContainer = styled.header`
     position: relative;
     background-color: ${({theme}) => theme.COLORS["purple-100"]};
 `
+
 
 export const ContentContainer = styled.section`
     width: 99.3rem;
@@ -41,3 +43,23 @@ export const SecondImage = styled.img`
     right: 0;
     bottom: 0;
 `
+
+export const ButtonRegisterContainer = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .8rem;
+`
+
+export const ButtonRegisterBloco = styled.button`
+    font-family: ${({theme}) => theme.FONT.fonts};
+    border: none;
+    border-radius: .5rem;
+    padding: .8rem;
+
+    color: ${({theme}) => theme.COLORS.white};
+    background-color: ${({theme}) => theme.COLORS["purple-900"]};
+    cursor: pointer;
+`
+
+
